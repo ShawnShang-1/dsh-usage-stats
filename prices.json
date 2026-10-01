@@ -1,0 +1,71 @@
+{
+  "_note": [
+    "单价表。单位：元 / 百万 token，四种计数：input=缓存未命中的输入，cacheRead=缓存命中的输入，output=输出，cacheWrite=缓存写入。",
+    "改完保存本文件，在设置页点「刷新」即可生效，不需要重装插件。",
+    "offPeak 是可选的谷时价；不写就全天按上面的价。谷时窗口见 offPeakWindow（默认 providers 本地时钟 UTC+8 的 00:30-08:30，周末全天）。",
+    "没有匹配到条目的模型在设置页显示「—」。provider 字段可选，写了就优先按 provider/model 精确匹配。",
+    "下面 deepseek-flash / deepseek-v4-pro 的数值是占位默认值，请按你的实际账单核对。"
+  ],
+  "unit": 1000000,
+  "currency": "",
+  "offPeakWindow": {
+    "start": "00:30",
+    "end": "08:30",
+    "weekends": true,
+    "utcOffsetMinutes": 480
+  },
+  "models": [
+    {
+      "model": "deepseek-flash",
+      "input": 2,
+      "cacheRead": 0.5,
+      "output": 8,
+      "cacheWrite": 0,
+      "offPeak": {
+        "input": 1,
+        "cacheRead": 0.25,
+        "output": 4,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "input": 4,
+      "cacheRead": 1,
+      "output": 16,
+      "cacheWrite": 0,
+      "offPeak": {
+        "input": 1,
+        "cacheRead": 0.25,
+        "output": 4,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "model": "deepseek-chat",
+      "input": 2,
+      "cacheRead": 0.5,
+      "output": 8,
+      "cacheWrite": 0,
+      "offPeak": {
+        "input": 1,
+        "cacheRead": 0.25,
+        "output": 4,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "model": "deepseek-reasoner",
+      "input": 4,
+      "cacheRead": 1,
+      "output": 16,
+      "cacheWrite": 0,
+      "offPeak": {
+        "input": 1,
+        "cacheRead": 0.25,
+        "output": 4,
+        "cacheWrite": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "dsh-usage-stats",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Usage statistics for Settings: cumulative and peak tokens, chat streaks, a year-long activity heatmap, and per-model token, cache-hit and cost detail",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./prices.json": "./prices.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "usage",
+    "tokens",
+    "cost"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShawnShang-1/dsh-usage-stats.git"
+  },
+  "homepage": "https://github.com/ShawnShang-1/dsh-usage-stats#readme",
+  "bugs": {
+    "url": "https://github.com/ShawnShang-1/dsh-usage-stats/issues"
+  },
+  "files": [
+    "lib",
+    "prices.json",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}

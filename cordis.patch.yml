@@ -1,0 +1,19 @@
+# The dsh-usage-stats bundle patch: one insert over the profile root.
+#
+# The row mounts this package's host half — the usage fold behind the
+# `/dsh-usage-stats` prefix route on the composed webserver. The browser half is
+# discovered from the same package's `dsh.client` declaration and its
+# `exports["./client"]` bundle; it registers the Settings page into the
+# `settings.section` slot.
+#
+# The specifier is relative on purpose: a relative insertion anchors beside this
+# patch file, so the bundle stays portable. `lib/entry.js` is a stable shim that
+# re-imports `lib/host.js` by file revision, which is what makes host edits take
+# effect in a running process — the vendored Loader keeps Node's ESM cache,
+# which is keyed by the exact resolved URL.
+- insert:
+    - id: usage-stats
+      name: './lib/entry.js'
+      config:
+        ttlMs: 30000
+        maxSessions: 4000
